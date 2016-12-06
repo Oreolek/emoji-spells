@@ -1,12 +1,14 @@
 ImprovEngine = require "improv"
-marked = require "marked"
-fs = require 'fs'
+ImprovModel = require "./model"
 CSON = require 'cson'
 glob = require 'glob'
+Masto = require 'mastodon'
 
-class ImprovModel
-  constructor: () ->
-    @tags = []
+config = CSON.parseCSONFile('config.cson')
+Mastodon = new Masto({
+  access_token: config.access_token
+  api_url: config.api_url
+})
 
 files = glob.sync('data/*.cson')
 spec = {}
@@ -32,4 +34,10 @@ improv = new ImprovEngine(spec, {
 })
 
 model = new ImprovModel
-console.log improv.gen('voice', model)
+description = improv.gen('main', model).trim()
+if config.post
+  Mastodon.post('statuses', {
+    status: description
+  })
+else
+  console.log description

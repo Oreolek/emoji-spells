@@ -1,0 +1,3 @@
+access_token: "your-token-here"
+api_url: "https://botsin.space/api/v1/"
+post: false
