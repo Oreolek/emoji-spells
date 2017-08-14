@@ -9,3 +9,10 @@ Written in CoffeeScript using [Improv](https://github.com/sequitur/improv) proce
 Code license: MIT (see license.txt)
 
 Data license: JSON
+
+## Installation
+
+* Install [npm](http://npmjs.com/) or [yarn](https://yarnpkg.com/)
+* Execute `npm install` or `yarn install`
+* Copy `config.cson.example` to `config.cson` and edit it.
+* Execute `node_modules/coffee-script/bin/coffee main.coffee`
