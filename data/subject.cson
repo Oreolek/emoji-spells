@@ -107,7 +107,7 @@ phrases: [
   "microphone"
   "mobile phone"
   "Nintendo 64"
-  "the year [1-3000]"
+  "the year [#1-3000]"
   "genetically engineered kittens"
   "kittens"
   "puppies"
